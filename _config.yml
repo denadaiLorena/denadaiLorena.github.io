@@ -3,9 +3,9 @@
 title: Your Name
 description: subtitle | affiliations | motto
 
-baseurl: #name of GitHub repository
-url: "https://denadailorena.github.io" #custom url to be used instead of GitHub repository
-email: #
+baseurl: 
+url: https://denadailorena.github.io
+email: 
 
 # Pagination
 paginate: 4
