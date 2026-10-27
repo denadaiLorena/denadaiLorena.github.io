@@ -18,7 +18,7 @@ Hoje estou aqui e muito feliz por ter entrado na **área de Tecnologia**.
 
 Fora das telas, eu gosto muito de **tocar instrumento musical**. Eu toco **teclado e violino**, mas quero aprender **bateria e contrabaixo** também! Amo fazer coisas **manuais**, **natureza**, etc.
 
-Atualmente faço **estágio** no órgão estadual [IEMA](https://iema.es.gov.br/){:target="_blank"}. Trabalho em **Desenvolvimento e Engenharia de software**, mas meu objetivo agora é focar na área de <u>**Ciência de Dados**</u>.
+Atualmente faço **estágio** no órgão estadual [IEMA](https://iema.es.gov.br/){:target="_blank"}. Trabalho em **Desenvolvimento e Engenharia de software**, mas meu objetivo agora é focar na área de **Ciência de Dados**.
 
 ### Além disso, confira:
 
