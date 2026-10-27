@@ -1,7 +1,7 @@
 ### your site title here
 
-title: Your Name
-description: subtitle | affiliations | motto
+title: Lorena De Nadai
+description: Cientista de dados | Engenharia de software | IEMA
 
 baseurl: 
 url: https://denadailorena.github.io
@@ -13,9 +13,9 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-linkedin: "#"
+linkedin: "www.linkedin.com/in/lorena-denadai-17a39037b"
 stackoverflow: "#"
-github: "#"
+github: "https://github.com/denadaiLorena"
 researchgate: "#"
 orcid: "#"
 quora: "#"
