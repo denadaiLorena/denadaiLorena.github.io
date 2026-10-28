@@ -22,5 +22,6 @@ Atualmente faço **estágio** no órgão estadual [IEMA](https://iema.es.gov.br/
 
 ### Além disso, confira:
 
-- [Meu currículo (clique em aqui)](https://github.com/jitinnair1/autocv) - a LaTeX template that builds and deploys the CV using GitHub Actions, so you will always have a ready link for your latest CV
+- [Meu currículo (clique em aqui)](https://denadailorena.github.io/AutoCV/){:target="_blank"}.
+  
 
