@@ -50,6 +50,7 @@ collections:
     order:
       - ecommerce-ai-dashboard.md
       - painel-covid-es.md
+      - analise-criminalidade-llm.md
       - shortProject.md
       - redirect.md
       - project4.md
