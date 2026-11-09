@@ -49,6 +49,7 @@ collections:
     permalink: /projects/:name/
     order:
       - ecommerce-ai-dashboard.md
+      - painel-covid-es.md
       - shortProject.md
       - redirect.md
       - project4.md
