@@ -48,8 +48,8 @@ collections:
     output: true
     permalink: /projects/:name/
     order:
+      - ecommerce-ai-dashboard.md
       - shortProject.md
-      - longerProjectTitle.md
       - redirect.md
       - project4.md
       - project5.md
