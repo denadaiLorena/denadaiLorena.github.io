@@ -11,7 +11,7 @@
 
   {% unless layout.hide_header_nav or page.hide_header_nav %}
   <header>
-    <h1 class="post-headline">{{site.title}}</h1>
+    <h1 class="post-headline{% if page.layout == 'post' %} site-title-small{% endif %}">{{site.title}}</h1>
     <h3 class="post-description">{{site.description}}</h3>
     {% include navigation.html %}
   </header>

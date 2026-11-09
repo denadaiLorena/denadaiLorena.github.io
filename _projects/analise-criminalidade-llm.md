@@ -5,7 +5,6 @@ description: Pipeline ETL no PostgreSQL, dashboard Streamlit e integração com 
 date: 2026-11-09
 ---
 
-# Análise de Criminalidade Pública com LLM & Pipeline ETL
 
 > **Sistema integrado de inteligência em segurança pública:** pipeline de dados automatizado (ETL) sobre microdados do SINESP, modelagem relacional em PostgreSQL, dashboard analítico no Streamlit e copiloto baseado em **LLM orquestrado via n8n** para geração de recomendações personalizadas de proteção.
 

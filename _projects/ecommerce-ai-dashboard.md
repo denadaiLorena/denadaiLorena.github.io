@@ -5,9 +5,9 @@ description: Plataforma executiva com IA preditiva (Holt-Winters), anomalias (Z-
 date: 2026-11-09
 ---
 
-# 🛒 Ecommerce AI Dashboard — AI Metric Pulse
 
 > **Plataforma analítica executiva de e-commerce** com inteligência preditiva, detecção contínua de anomalias, simulador estratégico *What-If* e copiloto de IA analítica generativa. Construída com base nas diretrizes de usabilidade e tokens do **IBM Carbon Design System**.
+
 
 <p align="left" style="display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0;">
   <a href="https://ecommerce-ai-dashboard-1.onrender.com/#/" target="_blank" style="background-color: #0047AB; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
@@ -17,8 +17,6 @@ date: 2026-11-09
     <i class="fab fa-github"></i> Ver Código no GitHub
   </a>
 </p>
-
-
 
 ---
 

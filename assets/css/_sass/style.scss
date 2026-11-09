@@ -136,6 +136,13 @@ blockquote {
   }
 }
 
+/* Nome do site nas páginas internas (posts/projetos) */
+.site-title-small {
+  font-size: 1.1em;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
 .navbar {
   margin-top: 0.5em;
 }

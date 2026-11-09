@@ -5,7 +5,6 @@ description: Dashboard analítico em Streamlit com pipeline otimizado em Parquet
 date: 2026-11-09
 ---
 
-# Painel COVID-19 — Espírito Santo (Streamlit)
 
 > **Dashboard analítico interativo de alta performance** desenvolvido em **Streamlit** e **Plotly** para exploração, saneamento e visualização dos microdados públicos da pandemia de COVID-19 no Estado do Espírito Santo.
 
