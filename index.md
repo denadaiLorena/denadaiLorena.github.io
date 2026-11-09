@@ -7,15 +7,21 @@ profile:
 published: true
 ---
 
-[Gradfolio](https://github.com/jitinnair1/gradfolio){:target="_blank"} is a responsive, dark-mode ready Jekyll theme designed keeping academia in mind. The easiest way to install the theme is to fork it using GitHub. Check the README file for [instructions](https://github.com/jitinnair1/gradfolio#installation){:target="_blank"}.
+Sou **estudante de Ciência da Computação**, atualmente no **6º período** (out/2026). O meu sonho de ser da **área da tecnologia** veio de quando eu era criança. 
+Eu assistia a muitos filmes e em alguns deles apareciam os famosos **hackers**, principalmente presenças femininas. Isso me chamava atenção, porque eram pessoas que demonstravam ser muito inteligentes mexendo naquele terminal preto com letras verdes, e burlando qualquer sistema. 
 
-If you want to use this space to write your biography here, edit the `index.md` file. You can put a picture in, too. Rename your picture to `profile.png` and put it in the `assets/images/` folder.
+Depois de um bom tempo, me apaixonei ainda mais, mas agora colocando a mão na massa quando fiz um **curso de Montagem e Manutenção pelo SENAI**. 
+O curso acabou, mas o desejo de seguir essa área era enorme. 
 
-The social-icons footer can be used to link profiles from GitHub, OrcID and ReasearchGate apart form the usual suspects. You can add your user ID in the `_config.yml` file to link your accounts.
+No Ensino Médio fiquei entre muitas outras opções (fisioterapeuta, bombeira, veterinária...), enfim haha! Encontrei o curso de **Ciência da Computação** e apostei nisso. 
+Hoje estou aqui e muito feliz por ter entrado na **área de Tecnologia**.
 
-PS: If you liked the theme, do star it on GitHub!
+Fora das telas, eu gosto muito de **tocar instrumento musical**. Eu toco **teclado e violino**, mas quero aprender **bateria e contrabaixo** também! Amo fazer coisas **manuais**, **natureza**, etc.
 
-### Also, check out:
+Atualmente faço **estágio** no órgão estadual [IEMA](https://iema.es.gov.br/){:target="_blank"}. Trabalho em **Desenvolvimento e Engenharia de software**, mas meu objetivo agora é focar na área de **Ciência de Dados**.
 
-- [autoCV](https://github.com/jitinnair1/autocv) - a LaTeX template that builds and deploys the CV using GitHub Actions, so you will always have a ready link for your latest CV
-- [Tail](https://github.com/jitinnair1/tail) - a minimal, quick-setup template for a blog
+### Além disso, confira:
+
+- [Meu currículo (clique em aqui)](https://denadailorena.github.io/AutoCV/){:target="_blank"}.
+  
+

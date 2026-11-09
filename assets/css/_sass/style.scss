@@ -40,6 +40,10 @@ h6 {
   text-transform: inherit;
 }
 
+h1 {
+  color: $brand-color;
+}
+
 
 a {
   color: $brand-color;
@@ -130,6 +134,11 @@ blockquote {
   @include media-query($on-palm) {
     font-size: 2em;
   }
+}
+
+/* Espaço antes do título do projeto */
+article > .post-headline {
+  margin-top: 2em;
 }
 
 .navbar {

@@ -5,7 +5,7 @@ description: Cientista de dados | Engenharia de software | IEMA
 
 baseurl: 
 url: https://denadailorena.github.io
-email: 
+email: lorenadenadai679@gmail.com
 
 # Pagination
 paginate: 4
@@ -48,12 +48,10 @@ collections:
     output: true
     permalink: /projects/:name/
     order:
-      - shortProject.md
-      - longerProjectTitle.md
-      - redirect.md
-      - project4.md
-      - project5.md
-      - project6.md
+      - ecommerce-ai-dashboard.md
+      - painel-covid-es.md
+      - analise-criminalidade-llm.md
+      
 
 sass:
   sass_dir: /assets/css/_sass

@@ -3,119 +3,94 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+
+  @include media-query($on-palm) {
+    padding: 1rem;
+  }
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  /* Compensate for excess margin on outer gallery flex items */
-  margin: -1rem -1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 2rem;
+  margin: 0;
 }
 
-.projectTile {
-  /* Minimum width of 200px and grow to fit available space */
-  flex: 1 0 200px;
+/* Card inteiro clicável, sem troca de conteúdo no hover */
+.projectCard {
+  display: flex;
+  flex-direction: column;
   border-radius: 15px;
+  overflow: hidden;
   background: $projectbox;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
   @media (prefers-color-scheme: dark) {
     background: $projectbox-dark;
   }
-  height: 200px;
-  width: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: $brand-color;
+  }
+}
+
+.projectCard-media {
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  display: table;
 }
 
-.projectTile a {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
+.projectCard-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.projectTile a span {
+.projectCard:hover .projectCard-media img {
+  transform: scale(1.05);
+}
+
+/* Reserva discreta quando o projeto não tem imagem */
+.projectCard-placeholder {
+  width: 100%;
+  height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
+  background: rgba($projectbox-text, 0.08);
+  color: rgba($projectbox-text, 0.35);
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-.projectTile a span h2 {
-  font-size: 1.5rem;
-  padding: 1rem;
-  color: $projectbox-text;
+.projectCard-body {
+  padding: 1rem 1.2rem 1.2rem;
 }
 
-.projectTile:hover a span h2 {
-  display: none;
-}
-
-.projectTile a span p {
-  display: none;
-}
-
-.projectTile:hover a span p {
+/* O fundo do card é claro nos dois temas, então o texto é sempre escuro */
+.projectCard-body h2 {
   font-size: 1.2rem;
-  display: flex;
-  padding: 1rem;
+  line-height: 1.4;
+  margin: 0 0 0.4rem;
   color: $projectbox-text;
 }
 
-@include media-query($on-phone) {
-  @media screen and (max-width: $on-phone){
+.projectCard-body p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: $projectbox-text;
+  opacity: 0.85;
 
-    .projectTile {
-      height: 80px;
-    }
-
-    .projectTile a span h2 {
-      font-size: 1.2rem;
-    }
-
-    .projectTile:hover a span p {
-      display: none;
-    }
-
-    .projectTile:hover a span h2 {
-      display: flex;
-    }
-
-
-  }
+  /* limita a descrição a 3 linhas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-
-@include media-query($on-palm) {
-  @media screen and (max-width: $on-palm){
-
-    .projectTile {
-      height: 100px;
-    }
-
-    .projectTile a span h2 {
-      font-size: 1.3rem;
-    }
-
-    .projectTile:hover a span p {
-      display: none;
-    }
-
-    .projectTile:hover a span h2 {
-      display: flex;
-    }
-
-  }
-}
-
-
-@supports (display: grid) {
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2rem;
-  }
-
-  .gallery,
-  .gallery-item {
-    margin: 0;
-  }
-}
-
-//Based on: https://codepen.io/GeorgePark/pen/vdqYom
