@@ -1,4 +1,3 @@
-
 /* Project Page */
 .ProjectContainer {
   max-width: 800px;
@@ -62,8 +61,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba($brand-color, 0.35), rgba($brand-color, 0.12));
-  color: $brand-color;
+  background: rgba($projectbox-text, 0.08);
+  color: rgba($projectbox-text, 0.35);
   font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: bold;
@@ -73,23 +72,20 @@
   padding: 1rem 1.2rem 1.2rem;
 }
 
+/* O fundo do card é claro nos dois temas, então o texto é sempre escuro */
 .projectCard-body h2 {
   font-size: 1.2rem;
   line-height: 1.4;
   margin: 0 0 0.4rem;
-  color: $text-color;
-
-  @media (prefers-color-scheme: dark) {
-    color: $text-color-dark;
-  }
+  color: $projectbox-text;
 }
 
 .projectCard-body p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
+  color: $projectbox-text;
   opacity: 0.85;
-  color: $text-color;
 
   /* limita a descrição a 3 linhas */
   display: -webkit-box;
@@ -97,8 +93,4 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-
-  @media (prefers-color-scheme: dark) {
-    color: $text-color-dark;
-  }
 }
