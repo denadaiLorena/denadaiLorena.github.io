@@ -3,6 +3,8 @@ layout: post
 title: Ecommerce AI Dashboard
 description: Plataforma executiva com IA preditiva (Holt-Winters), anomalias (Z-Score), simulador What-If e copiloto LLM no IBM Carbon.
 date: 2026-11-09
+image: /assets/images/EcommerceAIDashboard.png
+order: 1
 ---
 
 
@@ -16,6 +18,10 @@ date: 2026-11-09
   <a href="https://github.com/denadaiLorena/Ecommerce-AI-Dashboard.git" target="_blank" style="background-color: #24292e; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
     <i class="fab fa-github"></i> Ver Código no GitHub
   </a>
+</p>
+
+<p align="center" style="margin: 25px 0;">
+  <img src="{{ '/assets/images/EcommerceAIDashboard.png' | relative_url }}" alt="Ecommerce AI Dashboard" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
 </p>
 
 ---
