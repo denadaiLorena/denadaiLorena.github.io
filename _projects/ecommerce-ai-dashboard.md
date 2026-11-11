@@ -3,7 +3,7 @@ layout: post
 title: Ecommerce AI Dashboard
 description: Plataforma executiva com IA preditiva (Holt-Winters), anomalias (Z-Score), simulador What-If e copiloto LLM no IBM Carbon.
 date: 2026-11-09
-image: /assets/images/EcommerceAIDashboard.png
+image: /assets/images/project/EcommerceAIDashboard.png
 order: 1
 ---
 
@@ -21,7 +21,7 @@ order: 1
 </p>
 
 <p align="center" style="margin: 25px 0;">
-  <img src="{{ '/assets/images/EcommerceAIDashboard.png' | relative_url }}" alt="Ecommerce AI Dashboard" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
+  <img src="{{ '/assets/images/project/EcommerceAIDashboard.png' | relative_url }}" alt="Ecommerce AI Dashboard" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
 </p>
 
 ---
