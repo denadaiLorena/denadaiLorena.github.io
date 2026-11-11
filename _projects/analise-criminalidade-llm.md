@@ -118,40 +118,6 @@ Para mensurar a confiabilidade das orientações geradas pelo LLM, foi implement
 
 ---
 
-## Estrutura de Pastas e Módulos
-
-```text
-projeto_integrador_4_llm_analise_de_criminalidade/
-├── database/                  # Módulos de conexão e modelo relacional PostgreSQL
-│   ├── main.py                # Validação isolada de conexão e payloads
-│   ├── models.py              # Declarações SQLAlchemy, tabelas e índices
-│   └── queries.py             # Consultas analíticas SQL pré-compiladas
-├── etl/                       # Pipeline de Extração, Transformação e Carga
-│   ├── extracao_dados.py      # Download dos microdados fonte (SINESP)
-│   ├── transformacao_dados.py # Limpeza, tipagem e padronização com Pandas
-│   ├── carregamento.py        # Carga massiva otimizada via COPY
-│   └── orquestrador_etl.py    # Orquestrador sequencial do pipeline
-├── services/                  # Clientes e integrações externas
-│   └── n8n_client.py          # Comunicação com o webhook do N8N
-├── views/                     # Abas modulares do Streamlit
-│   ├── aba_geral.py           # Análise geral de ocorrências
-│   ├── aba_genero.py          # Vitimização por gênero
-│   ├── aba_armas.py           # Apreensão de armamentos
-│   ├── aba_agentes.py         # Mortes de policiais e agentes de segurança
-│   ├── aba_drogas.py          # Apreensões de substâncias ilícitas
-│   └── aba_analise_ia.py      # Interface conversacional com o LLM
-├── evals/                     # Avaliação de qualidade e métricas da IA
-│   ├── avaliacao_ia.py        # Script interativo de pontuação por rubrica
-│   └── resultado_avaliacao.md # Relatório qualitativo de alinhamento do modelo
-├── tests/                     # Suíte de testes automatizados
-│   └── test_n8n_client.py     # Testes unitários com pytest
-├── app.py                     # Entrypoint da aplicação Streamlit
-├── requirements.txt           # Dependências do projeto
-└── README.md                  # Especificação técnica
-```
-
----
-
 ## Tecnologias Utilizadas
 
 - **Linguagem & Framework Web:** Python 3.10+, [Streamlit](https://streamlit.io/)
