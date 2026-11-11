@@ -13,7 +13,7 @@ order: 2
   <a href="https://an-lise-de-dados-da-covid-19-epdcsgchyceswrkjnqhd3r.streamlit.app/" target="_blank" style="background-color: #0047AB; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
      Aplicação Online (Streamlit)
   </a>
-  <a href="https://github.com/denadaiLorena/analise-de-dados-da-covid-19" target="_blank" style="background-color: #24292e; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
+  <a href="https://github.com/denadaiLorena/An-lise-de-Dados-da-COVID-19.git" target="_blank" style="background-color: #24292e; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
     <i class="fab fa-github"></i> Ver Código no GitHub
   </a>
 </p>
