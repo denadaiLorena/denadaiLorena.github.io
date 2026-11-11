@@ -22,24 +22,22 @@
   flex-direction: column;
   border-radius: 15px;
   overflow: hidden;
-  background: $projectbox;
-  border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-
-  @media (prefers-color-scheme: dark) {
-    background: $projectbox-dark;
-  }
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-color: $brand-color;
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--brand-color);
   }
 }
 
 .projectCard-media {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: var(--placeholder-bg);
 }
 
 .projectCard-media img {
@@ -61,8 +59,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba($projectbox-text, 0.08);
-  color: rgba($projectbox-text, 0.35);
+  background: var(--placeholder-bg);
+  color: var(--placeholder-text);
   font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: bold;
@@ -72,19 +70,18 @@
   padding: 1rem 1.2rem 1.2rem;
 }
 
-/* O fundo do card é claro nos dois temas, então o texto é sempre escuro */
 .projectCard-body h2 {
   font-size: 1.2rem;
   line-height: 1.4;
   margin: 0 0 0.4rem;
-  color: $projectbox-text;
+  color: var(--card-text);
 }
 
 .projectCard-body p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: $projectbox-text;
+  color: var(--card-text);
   opacity: 0.85;
 
   /* limita a descrição a 3 linhas */
@@ -100,8 +97,7 @@
   font-size: 0.8rem;
   line-height: 1.4;
   margin-bottom: 0.2rem;
-  color: $projectbox-text;
-  opacity: 0.7;
+  color: var(--text-muted);
 }
 
 .projectCard-tags {
@@ -118,6 +114,7 @@
   line-height: 1;
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
-  background: rgba($projectbox-text, 0.1);
-  color: $projectbox-text;
+  background: var(--brand-light);
+  color: var(--brand-color);
+  font-weight: 500;
 }
