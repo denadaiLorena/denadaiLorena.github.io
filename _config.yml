@@ -1,7 +1,9 @@
 ### your site title here
 
-title: Lorena De Nadai
-description: Cientista de dados | Engenharia de software | IEMA
+title: Lorena de Nadai
+description: Estudante de Ciência da Computação | Dados & Software | IEMA
+locale: pt_BR
+lang: pt-BR
 
 baseurl: 
 url: https://denadailorena.github.io
@@ -13,9 +15,9 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-linkedin: "www.linkedin.com/in/lorena-denadai-17a39037b"
+linkedin: "lorena-denadai-17a39037b"
 stackoverflow: "#"
-github: "https://github.com/denadaiLorena"
+github: "denadaiLorena"
 researchgate: "#"
 orcid: "#"
 quora: "#"

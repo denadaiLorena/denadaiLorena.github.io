@@ -1,13 +1,15 @@
 ---
 layout: about
+title: Início
 permalink: /
 profile:
   align: right
   image: profile.png
   published: true
+  alt: "Foto de Lorena de Nadai"
 ---
 
-# Olá, sou Lorena De Nadai
+# Olá, sou Lorena de Nadai
 
 Estudante de **Ciência da Computação** (6º período), atuando com **Engenharia de Software** no setor público ([IEMA](https://iema.es.gov.br/){:target="_blank"}) e direcionando minha trajetória técnica para **Ciência de Dados e Inteligência Artificial**.
 
