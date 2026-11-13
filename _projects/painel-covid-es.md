@@ -114,10 +114,10 @@ order: 2
        Visão Completa
     </button>
     <button class="mode-btn" id="btn-rh" onclick="setReadingMode('rh')">
-       Visão Executiva & RH (Problema, Impacto e Decisões)
+       Linguagem Simples (Problema, Impacto e Decisões)
     </button>
     <button class="mode-btn" id="btn-tech" onclick="setReadingMode('tech')">
-       Visão Técnica & Engenharia (Código, Dados e Trade-offs)
+       Visão Técnica (Código, Dados e Trade-offs)
     </button>
   </div>
 </div>
