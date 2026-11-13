@@ -9,6 +9,15 @@ baseurl:
 url: https://denadailorena.github.io
 email: lorenadenadai679@gmail.com
 
+# Open Graph / SEO Social Preview
+image: /assets/images/og-preview.png
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-preview.png
+
 # Pagination
 paginate: 4
 permalink: /blog/:year/:title/

@@ -365,3 +365,124 @@ article > .post-headline {
 .article-list {
   margin: 1em 0;
 }
+
+/* ─── Experience Section ─── */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin: 1.2rem 0 1.6rem 0;
+}
+
+.experience-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--brand-color);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.4rem;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.experience-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.experience-role {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.experience-company {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+
+  a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brand-color);
+    background: none;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.2s ease;
+
+    &:hover {
+      color: var(--brand-hover);
+      text-decoration-color: var(--brand-hover);
+    }
+  }
+}
+
+.experience-company-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.experience-period {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-color);
+  white-space: nowrap;
+}
+
+.experience-location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.experience-bullets {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  li {
+    font-size: 0.92rem;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+}
+
+@include media-query($on-palm) {
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .experience-meta {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0.6rem;
+  }
+}

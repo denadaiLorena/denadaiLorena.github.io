@@ -50,6 +50,35 @@ Estudante de **Ciência da Computação** (6º período), atuando com **Engenhar
 
 ---
 
+## Experiência
+
+<div class="experience-list">
+
+  <div class="experience-item">
+    <div class="experience-header">
+      <div class="experience-title-block">
+        <span class="experience-role">Analista / Engenheira de Software</span>
+        <span class="experience-company">
+          <a href="https://iema.es.gov.br/" target="_blank">IEMA</a>
+          <span class="experience-company-label">Instituto Estadual de Meio Ambiente e Recursos Hídricos</span>
+        </span>
+      </div>
+      <div class="experience-meta">
+        <span class="experience-period">2024 – Presente</span>
+        <span class="experience-location">Vitória, ES</span>
+      </div>
+    </div>
+    <ul class="experience-bullets">
+      <li>Desenvolvimento de soluções full-stack para gestão e serviços públicos em produção real.</li>
+      <li>Modelagem de bancos relacionais, APIs REST e interfaces modernas para sistemas internos.</li>
+      <li>Stack: <strong>Vue.js · TypeScript · Quasar · PostgreSQL · Python · SQLAlchemy</strong></li>
+    </ul>
+  </div>
+
+</div>
+
+---
+
 ## Trajetória
 
 O interesse pela área tecnológica começou cedo, impulsionado pela curiosidade em entender como sistemas funcionavam por baixo do capô e como a automação podia simplificar processos repetitivos. O primeiro passo prático se deu no curso técnico de **Montagem e Manutenção de Computadores pelo SENAI**, onde adquiri disciplina de diagnóstico, análise de hardware e infraestrutura física.
