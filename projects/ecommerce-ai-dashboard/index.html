@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  
+  <header>
+    <h1 class="post-headline site-title-small">Lorena de Nadai</h1>
+    <h3 class="post-description">Estudante de Ciência da Computação | Dados & Software | IEMA</h3>
+    <div class="navbar-container">
+  <div class="navbar links scroll">
+    <a href="/">Início</a>
+    <a href="/projects/">Projetos</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+</div>
+
+  </header>
+  
+
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Ecommerce AI Dashboard | Lorena de Nadai</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Ecommerce AI Dashboard" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Plataforma executiva com IA preditiva (Holt-Winters), anomalias (Z-Score), simulador What-If e copiloto LLM no IBM Carbon." />
+<meta name="twitter:description" property="og:description" content="Plataforma executiva com IA preditiva (Holt-Winters), anomalias (Z-Score), simulador What-If e copiloto LLM no IBM Carbon." />
+<link rel="canonical" href="https://denadailorena.github.io/projects/ecommerce-ai-dashboard/" />
+<meta property="og:url" content="https://denadailorena.github.io/projects/ecommerce-ai-dashboard/" />
+<meta property="og:site_name" content="Lorena de Nadai" />
+<meta property="og:image" content="https://denadailorena.github.io/assets/images/project/EcommerceAIDashboard.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-11-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-11-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://denadailorena.github.io/assets/images/project/EcommerceAIDashboard.png" />
+<meta name="twitter:title" content="Ecommerce AI Dashboard" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-11-09T00:00:00+00:00","datePublished":"2026-11-09T00:00:00+00:00","description":"Plataforma executiva com IA preditiva (Holt-Winters), anomalias (Z-Score), simulador What-If e copiloto LLM no IBM Carbon.","headline":"Ecommerce AI Dashboard","image":"https://denadailorena.github.io/assets/images/project/EcommerceAIDashboard.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://denadailorena.github.io/projects/ecommerce-ai-dashboard/"},"url":"https://denadailorena.github.io/projects/ecommerce-ai-dashboard/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- insert favicons, used https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/assets/favicon/logo.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/logo.png" />
+<link rel="shortcut icon" href="/assets/favicon/logo.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/logo.png" />
+<link rel="manifest" href="/assets/favicon/logo.png" />
+
+
+  <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+  <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+  <script type="text/javascript">
+    (function () {
+      var css = document.createElement('link');
+      css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css';
+      css.rel = 'stylesheet';
+      css.type = 'text/css';
+      //this class is added to the body when fontawesome is loaded
+      //this is done to make the fontawesome icons appear at the same time as the custome CSS-only logos
+      var showIcons = function () {
+        document.body.classList.add('fontawesome-loaded');
+      };
+      css.onload = showIcons;
+      css.onerror = showIcons;
+      setTimeout(showIcons, 1500);
+      document.getElementsByTagName('head')[0].appendChild(css);
+    })();
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <article>
+      <h1 class="post-headline">Ecommerce AI Dashboard</h1>
+<p class="meta"><small>09/11/2026</small></p>
+
+<blockquote>
+  <p><strong>Plataforma analítica executiva de e-commerce</strong> com inteligência preditiva, detecção contínua de anomalias, simulador estratégico <em>What-If</em> e copiloto de IA analítica generativa. Construída com base nas diretrizes de usabilidade e tokens do <strong>IBM Carbon Design System</strong>.</p>
+</blockquote>
+
+<p align="left" style="display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0;">
+  <a href="https://ecommerce-ai-dashboard-1.onrender.com/#/" target="_blank" style="background-color: #0047AB; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;" rel="noopener noreferrer">
+     Aplicação Online
+  </a>
+  <a href="https://github.com/denadaiLorena/Ecommerce-AI-Dashboard.git" target="_blank" style="background-color: #24292e; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;" rel="noopener noreferrer">
+    <i class="fab fa-github"></i> Ver Código no GitHub
+  </a>
+</p>
+
+<p align="center" style="margin: 25px 0;">
+  <img src="/assets/images/project/EcommerceAIDashboard.png" alt="Ecommerce AI Dashboard" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
+</p>
+
+<hr>
+
+<h2 id="visão-geral--desafio-de-negócio">Visão Geral &amp; Desafio de Negócio</h2>
+
+<p>Em grandes operações de comércio eletrônico, diretores e tomadores de decisão frequentemente enfrentam o problema da <strong>saturação de dados sem contexto acionável</strong>: dezenas de gráficos estáticos que mostram <em>o que aconteceu</em>, mas falham em explicar <em>por que aconteceu</em> e <em>o que acontecerá a seguir</em>.</p>
+
+<p>O <strong>Ecommerce AI Dashboard (AI Metric Pulse)</strong> foi concebido como uma solução analítica full-stack voltada para diretores e gestores de e-commerce. Integrado à base de dados real do marketplace brasileiro <strong>Olist</strong> (~100.000 pedidos reais), o sistema combina telemetria de negócios de alta precisão com algoritmos estatísticos de <em>Machine Learning</em> e inteligência artificial generativa via LLM.</p>
+
+<hr>
+
+<h2 id="principais-capacidades--inteligência-analítica">Principais Capacidades &amp; Inteligência Analítica</h2>
+
+<h3 id="1-co-piloto-de-ia-executiva-watsonx-style">1. Co-Piloto de IA Executiva (Watsonx Style)</h3>
+<p>Assistente analítico conversacional integrado diretamente à interface executiva. Alimentado por LLM via <strong>Groq Cloud</strong> (<code class="language-plaintext highlighter-rouge">openai/gpt-oss-120b</code>), o copiloto é capaz de:</p>
+<ul>
+  <li>Responder em tempo real a perguntas analíticas abertas em linguagem natural sobre o desempenho da operação;</li>
+  <li>Executar diagnósticos automáticos correlacionando múltiplos indicadores (ex.: queda de conversão em determinada região cruzada com aumento de lead time de frete);</li>
+  <li>Fornecer recomendações executivas fundamentadas nos dados reais consolidados da sessão.</li>
+</ul>
+
+<h3 id="2-previsão-preditiva-de-demanda-holt-winters-7d">2. Previsão Preditiva de Demanda (Holt-Winters 7D)</h3>
+<p>Modelo de séries temporais baseado em <strong>suavização exponencial tripla (Holt-Winters)</strong> projetado para antecipar o volume de vendas e faturamento:</p>
+<ul>
+  <li>Modelação de tendência linear e <strong>sazonalidade semanal aditiva/multiplicativa</strong>;</li>
+  <li>Cálculo dinâmico de <strong>intervalo de confiança a 95%</strong>;</li>
+  <li>Validação através de backtesting histórico de acurácia contra a série real de pedidos.</li>
+</ul>
+
+<h3 id="3-detecção-estatística-de-anomalias-z-score">3. Detecção Estatística de Anomalias (Z-Score)</h3>
+<p>Monitoramento estatístico contínuo em janela móvel de <strong>28 dias</strong>:</p>
+<ul>
+  <li>Detecção instantânea de picos anômalos de demanda ou quedas bruscas de faturamento;</li>
+  <li>Threshold estatístico baseado no desvio padrão ($\pm 3\sigma$);</li>
+  <li>Sinalização visual na linha do tempo para investigação rápida antes que impactos operacionais afetem a reputação da loja.</li>
+</ul>
+
+<h3 id="4-simulador-de-decisões-estratégicas-what-if">4. Simulador de Decisões Estratégicas (<em>What-If</em>)</h3>
+<p>Módulo interativo de simulação de cenários que permite ao gestor testar o impacto de decisões táticas antes de implementá-las:</p>
+<ul>
+  <li>
+<strong>Alavancas simuladas:</strong> Redução no prazo de entrega, expansão de opções de parcelamento sem juros e subsídio de frete para regiões específicas (Norte e Nordeste);</li>
+  <li>
+<strong>Cálculo de Elasticidade:</strong> Projeta matematicamente o reflexo estimado no faturamento bruto, margem operacional e na nota média de satisfação (<strong>CSAT</strong>).</li>
+</ul>
+
+<h3 id="5-diagnóstico-da-cadeia-logística--clientes-detratores">5. Diagnóstico da Cadeia Logística &amp; Clientes Detratores</h3>
+<p>Decomposição cirúrgica dos pontos críticos da jornada de atendimento:</p>
+<ul>
+  <li>
+<strong>Decomposição de Lead Time:</strong> Separação granular do tempo gasto pelo vendedor (tempo até despacho) versus o tempo sob responsabilidade da transportadora (trânsito logístico);</li>
+  <li>
+<strong>Análise de Causa-Raiz de Detratores:</strong> Agrupamento e categorização dos motivos por trás de avaliações negativas (reviews de 1 e 2 estrelas), permitindo atuar diretamente no gargalo operacional.</li>
+</ul>
+
+<h3 id="6-exportação--relatórios-executivos-oficiais">6. Exportação &amp; Relatórios Executivos Oficiais</h3>
+<ul>
+  <li>
+<strong>Relatório Executivo A4/PDF:</strong> Emissão formatada de documento executivo pronto para reuniões de diretoria e impressão;</li>
+  <li>
+<strong>Exportação Consolidada CSV:</strong> Download da base de indicadores com codificação UTF-8 com BOM, assegurando compatibilidade imediata com Microsoft Excel e ferramentas de BI.</li>
+</ul>
+
+<hr>
+
+<h2 id="tecnologias-utilizadas">Tecnologias Utilizadas</h2>
+
+<ul>
+  <li>
+<strong>Frontend &amp; Visualização:</strong> <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue 3</a>, <a href="https://quasar.dev/" target="_blank" rel="noopener noreferrer">Quasar Framework v2</a>, <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">Vite</a>, <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>, <a href="https://apexcharts.com/" target="_blank" rel="noopener noreferrer">ApexCharts</a>, <a href="https://axios-http.com/" target="_blank" rel="noopener noreferrer">Axios</a>.</li>
+  <li>
+<strong>Design System:</strong> <a href="https://carbondesignsystem.com/" target="_blank" rel="noopener noreferrer">IBM Carbon Design System</a> &amp; tipografia <a href="https://www.ibm.com/plex/" target="_blank" rel="noopener noreferrer">IBM Plex</a>.</li>
+  <li>
+<strong>Backend &amp; Engenharia de Dados:</strong> <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python 3.11</a>, <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask</a>, <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">Pandas</a>, <a href="https://numpy.org/" target="_blank" rel="noopener noreferrer">NumPy</a>, <a href="https://gunicorn.org/" target="_blank" rel="noopener noreferrer">Gunicorn</a>.</li>
+  <li>
+<strong>Inteligência Artificial:</strong> <a href="https://groq.com/" target="_blank" rel="noopener noreferrer">Groq Cloud</a> (modelo <code class="language-plaintext highlighter-rouge">openai/gpt-oss-120b</code>).</li>
+  <li>
+<strong>DevOps &amp; Infraestrutura:</strong> <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">Docker</a>, <a href="https://devcenter.heroku.com/articles/procfile" target="_blank" rel="noopener noreferrer">Procfile</a>, scripts de automação PowerShell/Batch.</li>
+</ul>
+
+<hr>
+
+<h2 id="licença--dados">Licença &amp; Dados</h2>
+
+<p>Desenvolvido para fins demonstrativos e executivos. O conjunto de dados utilizado é proveniente do <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" rel="noopener noreferrer">Brazilian E-Commerce Public Dataset by Olist</a>, disponibilizado publicamente no Kaggle.</p>
+
+
+<!-- Comments only for posts -->
+
+
+    </article>
+  </main>
+
+  <footer>
+    <p class="copy">
+      <small> © Lorena de Nadai 2026
+        | Powered by Jekyll and
+        <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+        Última atualização em 13/11/2026
+      </small>
+    </p>
+
+    
+    <div class="rounded-social-buttons">
+<a title="" class="social-button email" itemprop="email" href="mailto:%6C%6F%72%65%6E%61%64%65%6E%61%64%61%69%36%37%39@%67%6D%61%69%6C.%63%6F%6D" target="_blank">
+    <i class="far fa-envelope"></i>
+  </a><a title="" class="social-button linkedin" href="https://www.linkedin.com/in/lorena-denadai-17a39037b" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-linkedin"></i>
+  </a><a title="" class="social-button github" href="https://www.github.com/denadaiLorena" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+
+    
+
+  </footer>
+
+  <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+  <script>
+    (function () {
+      var toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme') ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

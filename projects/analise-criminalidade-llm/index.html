@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  
+  <header>
+    <h1 class="post-headline site-title-small">Lorena de Nadai</h1>
+    <h3 class="post-description">Estudante de Ciência da Computação | Dados & Software | IEMA</h3>
+    <div class="navbar-container">
+  <div class="navbar links scroll">
+    <a href="/">Início</a>
+    <a href="/projects/">Projetos</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+</div>
+
+  </header>
+  
+
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Análise de Criminalidade &amp; LLM | Lorena de Nadai</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Análise de Criminalidade &amp; LLM" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Pipeline ETL no PostgreSQL, dashboard Streamlit e integração com LLM via n8n para análise e recomendações de segurança pública." />
+<meta name="twitter:description" property="og:description" content="Pipeline ETL no PostgreSQL, dashboard Streamlit e integração com LLM via n8n para análise e recomendações de segurança pública." />
+<link rel="canonical" href="https://denadailorena.github.io/projects/analise-criminalidade-llm/" />
+<meta property="og:url" content="https://denadailorena.github.io/projects/analise-criminalidade-llm/" />
+<meta property="og:site_name" content="Lorena de Nadai" />
+<meta property="og:image" content="https://denadailorena.github.io/assets/images/og-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-11-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-11-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://denadailorena.github.io/assets/images/og-preview.png" />
+<meta name="twitter:title" content="Análise de Criminalidade &amp; LLM" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-11-09T00:00:00+00:00","datePublished":"2026-11-09T00:00:00+00:00","description":"Pipeline ETL no PostgreSQL, dashboard Streamlit e integração com LLM via n8n para análise e recomendações de segurança pública.","headline":"Análise de Criminalidade \u0026amp; LLM","image":"https://denadailorena.github.io/assets/images/og-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://denadailorena.github.io/projects/analise-criminalidade-llm/"},"url":"https://denadailorena.github.io/projects/analise-criminalidade-llm/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- insert favicons, used https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/assets/favicon/logo.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/logo.png" />
+<link rel="shortcut icon" href="/assets/favicon/logo.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/logo.png" />
+<link rel="manifest" href="/assets/favicon/logo.png" />
+
+
+  <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+  <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+  <script type="text/javascript">
+    (function () {
+      var css = document.createElement('link');
+      css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css';
+      css.rel = 'stylesheet';
+      css.type = 'text/css';
+      //this class is added to the body when fontawesome is loaded
+      //this is done to make the fontawesome icons appear at the same time as the custome CSS-only logos
+      var showIcons = function () {
+        document.body.classList.add('fontawesome-loaded');
+      };
+      css.onload = showIcons;
+      css.onerror = showIcons;
+      setTimeout(showIcons, 1500);
+      document.getElementsByTagName('head')[0].appendChild(css);
+    })();
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <article>
+      <h1 class="post-headline">Análise de Criminalidade &amp; LLM</h1>
+<p class="meta"><small>09/11/2026</small></p>
+
+<blockquote>
+  <p><strong>Sistema integrado de inteligência em segurança pública:</strong> pipeline de dados automatizado (ETL) sobre microdados do SINESP, modelagem relacional em PostgreSQL, dashboard analítico no Streamlit e copiloto baseado em <strong>LLM orquestrado via n8n</strong> para geração de recomendações personalizadas de proteção.</p>
+</blockquote>
+
+<p align="left" style="display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0;">
+  <a href="https://youtu.be/oeBOw0o7HhY" target="_blank" style="background-color: #FF0000; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;" rel="noopener noreferrer">
+    <i class="fab fa-youtube"></i> Vídeo de Demonstração
+  </a>
+  <a href="https://github.com/JoaoPPH/projeto_integrador_4_llm_analise_de_criminalidade" target="_blank" style="background-color: #24292e; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;" rel="noopener noreferrer">
+    <i class="fab fa-github"></i> Ver Código no GitHub
+  </a>
+</p>
+
+<hr>
+
+<h2 id="contexto--desafio-do-projeto">Contexto &amp; Desafio do Projeto</h2>
+
+<p>A criminalidade e a segurança pública são desafios estruturais no Brasil. Embora o <strong>SINESP (Sistema Nacional de Informações de Segurança Pública)</strong> forneça dados abertos sobre ocorrências policiais em escala nacional, esses dados costumam estar dispersos em múltiplos arquivos volumosos, com desafios de qualidade, ausência de indexação unificada e sem canais diretos para que o cidadão ou analista obtenha recomendações contextuais para o seu dia a dia.</p>
+
+<p>Desenvolvido como projeto prático para a disciplina de <strong>Projeto Integrador 4</strong> (Curso de Ciência da Computação), este sistema aborda esse desafio de ponta a ponta: desde a extração automatizada e modelagem relacional de alta performance até a criação de um <strong>agente inteligente de segurança preventiva</strong> orientado por LLMs.</p>
+
+<hr>
+
+<h2 id="demonstração-em-vídeo">Demonstração em Vídeo</h2>
+
+<p>Confira a apresentação do protótipo funcional, demonstrando a navegação pelas abas analíticas, a performance das consultas SQL e a integração do copiloto conversacional com n8n:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <iframe src="https://www.youtube.com/embed/oeBOw0o7HhY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen=""></iframe>
+</div>
+
+<hr>
+
+<h2 id="arquitetura-de-dados--pipeline-etl">Arquitetura de Dados &amp; Pipeline ETL</h2>
+
+<p>O fluxo do projeto foi desenhado para assegurar integridade referencial, velocidade de consulta e desacoplamento entre armazenamento e inteligência:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Bases SINESP / Gov.br]
+          │
+          ▼ (etl/extracao_dados.py)
+[Tratamento e Normalização com Pandas] (etl/transformacao_dados.py)
+          │
+          ▼ (Carga Otimizada via COPY com SQLAlchemy)
+[Banco de Dados PostgreSQL Indexado]
+          │
+          ├───────────────────────────────┐
+          ▼                               ▼
+[Dashboard Streamlit (Views Analíticas)]   [Webhook n8n -&gt; Agente LLM]
+          │                               │
+          └────────► [Cidadão / Analista] ◄┘
+</code></pre></div></div>
+
+<h3 id="1-extração--transformação-etl">1. Extração &amp; Transformação (<code class="language-plaintext highlighter-rouge">etl/</code>)</h3>
+<ul>
+  <li>
+<strong>Extração Automatizada:</strong> Download programático dos conjuntos de dados públicos de ocorrências criminais.</li>
+  <li>
+<strong>Tratamento de Dados:</strong> Higienização de campos de data, normalização de UFs e nomes de municípios, tratamento de nulos e estruturação categórica de tipos de crimes e armamentos.</li>
+</ul>
+
+<h3 id="2-carga-otimizada-no-postgresql">2. Carga Otimizada no PostgreSQL</h3>
+<ul>
+  <li>Em vez de inserções linha a linha (<code class="language-plaintext highlighter-rouge">INSERT</code>), o carregamento utiliza o comando nativo <strong><code class="language-plaintext highlighter-rouge">COPY</code></strong> do PostgreSQL, acelerando em ordens de magnitude a ingestão de centenas de milhares de linhas.</li>
+  <li>Índices B-Tree compostos criados via SQLAlchemy nas colunas mais consultadas (<code class="language-plaintext highlighter-rouge">UF</code>, <code class="language-plaintext highlighter-rouge">município</code>, <code class="language-plaintext highlighter-rouge">data_ocorrencia</code>, <code class="language-plaintext highlighter-rouge">tipo_crime</code>), garantindo filtros instantâneos no front-end.</li>
+</ul>
+
+<hr>
+
+<h2 id="dashboard-analítico-segmentado-streamlit--plotly">Dashboard Analítico Segmentado (Streamlit &amp; Plotly)</h2>
+
+<p>A aplicação no Streamlit conta com uma interface organizada em <strong>6 abas especializadas</strong>, cada uma orientada a uma dimensão analítica do combate à violência:</p>
+
+<ol>
+  <li>
+<strong>Geral de Crimes:</strong> Panorama macro de ocorrências por estado, volume anual e distribuição temporal.</li>
+  <li>
+<strong>Vítimas por Gênero:</strong> Cruzamento demográfico de vitimização com recorte de violência contra a mulher e feminicídios.</li>
+  <li>
+<strong>Armas Apreendidas:</strong> Mapeamento de circulação e apreensão de calibres e armas de fogo ilegais por região.</li>
+  <li>
+<strong>Morte de Agentes do Estado:</strong> Telemetria de confronto e vitimização de forças de segurança pública em serviço ou folga.</li>
+  <li>
+<strong>Drogas Apreendidas:</strong> Volume e distribuição territorial de tipos de substâncias ilícitas interceptadas.</li>
+  <li>
+<strong>Análise Assistida por IA (LLM):</strong> Módulo de interação em linguagem natural integrado ao fluxo cognitivo.</li>
+</ol>
+
+<hr>
+
+<h2 id="integração-com-llm--fluxo-agentic-no-n8n">Integração com LLM &amp; Fluxo Agentic no N8N</h2>
+
+<p>A inteligência generativa da solução não atua apenas como um chatbot genérico, mas como um <strong>consultor de segurança situacional</strong>:</p>
+
+<ul>
+  <li>
+<strong>Arquitetura de Webhooks:</strong> O front-end Streamlit (<code class="language-plaintext highlighter-rouge">services/n8n_client.py</code>) despacha o contexto estruturado da consulta (localidade, horário, perfil) para um endpoint de webhook no <strong>n8n</strong>.</li>
+  <li>
+<strong>Orquestração N8N:</strong> O workflow processa o payload, consulta diretrizes de segurança e aciona o modelo de linguagem (LLM) com engenharia de prompts refinada.</li>
+  <li>
+<strong>Recomendações Contextuais:</strong> O agente analisa quatro pilares de vulnerabilidade:
+    <ul>
+      <li>
+<strong>Meio de Transporte:</strong> Precauções específicas para transporte público, aplicativo, veículo próprio ou a pé.</li>
+      <li>
+<strong>Acompanhantes:</strong> Cuidados específicos para deslocamentos individuais, com crianças ou idosos.</li>
+      <li>
+<strong>Período do Dia:</strong> Risco associado à luminosidade, movimentação de rua e janelas horárias críticas.</li>
+      <li>
+<strong>Objetivo da Viagem:</strong> Fatores de risco conforme o motivo (lazer, trabalho noturno, áreas comerciais ou residenciais).</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="qualidade-de-software-testes--avaliação-da-ia">Qualidade de Software, Testes &amp; Avaliação da IA</h2>
+
+<p>O projeto adota práticas formais de validação tanto para o código quanto para as respostas do modelo generativo:</p>
+
+<h3 id="1-testes-unitários-com-pytest">1. Testes Unitários com <code class="language-plaintext highlighter-rouge">pytest</code>
+</h3>
+<p>O arquivo <code class="language-plaintext highlighter-rouge">tests/test_n8n_client.py</code> valida o comportamento do cliente HTTP sem necessidade do servidor n8n estar online, utilizando mocks de requisição:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">test_uf_obrigatoria</code>: Assegura validação e tratamento para inputs vazios de UF.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">test_municipio_obrigatorio</code>: Garante que consultas exijam seleção municipal válida.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">test_resposta_sucesso_n8n</code>: Testa o parsing e desserialização da resposta JSON do agente.</li>
+</ul>
+
+<h3 id="2-framework-de-avaliação-manual-da-ia-evals">2. Framework de Avaliação Manual da IA (<code class="language-plaintext highlighter-rouge">evals/</code>)</h3>
+<p>Para mensurar a confiabilidade das orientações geradas pelo LLM, foi implementado um script de benchmark (<code class="language-plaintext highlighter-rouge">evals/avaliacao_ia.py</code>) com matriz de critérios:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Critério Avaliado</th>
+      <th style="text-align: center">Escala (0 a 2)</th>
+      <th style="text-align: left">Foco de Avaliação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Transporte</strong></td>
+      <td style="text-align: center">0 / 1 / 2</td>
+      <td style="text-align: left">Considera os riscos e cuidados inerentes ao modal escolhido?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Acompanhantes</strong></td>
+      <td style="text-align: center">0 / 1 / 2</td>
+      <td style="text-align: left">Oferece diretrizes proporcionais à vulnerabilidade do grupo?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Período</strong></td>
+      <td style="text-align: center">0 / 1 / 2</td>
+      <td style="text-align: left">Ajusta o nível de alerta para o horário do deslocamento?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Objetivo</strong></td>
+      <td style="text-align: center">0 / 1 / 2</td>
+      <td style="text-align: left">Respeita a finalidade e a dinâmica do local de destino?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Total Máximo</strong></td>
+      <td style="text-align: center"><strong>8 pontos</strong></td>
+      <td style="text-align: left">Índice percentual de conformidade da recomendação</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="tecnologias-utilizadas">Tecnologias Utilizadas</h2>
+
+<ul>
+  <li>
+<strong>Linguagem &amp; Framework Web:</strong> Python 3.10+, <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit</a>
+</li>
+  <li>
+<strong>Armazenamento &amp; ORM:</strong> PostgreSQL 15, <a href="https://www.sqlalchemy.org/" target="_blank" rel="noopener noreferrer">SQLAlchemy</a>
+</li>
+  <li>
+<strong>Engenharia de Dados:</strong> Pandas, NumPy</li>
+  <li>
+<strong>Orquestração de IA &amp; Workflows:</strong> <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer">n8n</a>, Webhooks, LLMs (Large Language Models)</li>
+  <li>
+<strong>Machine Learning:</strong> Scikit-Learn, XGBoost, Random Forest</li>
+  <li>
+<strong>Visualização de Dados:</strong> Plotly Express &amp; Plotly Graph Objects</li>
+  <li>
+<strong>Qualidade &amp; DevOps:</strong> Docker, Pytest</li>
+</ul>
+
+<hr>
+
+<h2 id="equipe--informações-acadêmicas">Equipe &amp; Informações Acadêmicas</h2>
+
+<p>Projeto desenvolvido para a disciplina de <strong>Projeto Integrador 4</strong> do curso de Ciência da Computação:</p>
+
+<ul>
+  <li>
+<strong>Orientador:</strong> Prof. Howard Cruz</li>
+  <li>
+<strong>Integrantes da Equipe:</strong>
+    <ul>
+      <li>Lorena Moreira de Nadai</li>
+      <li>Estevão Matos de Souza</li>
+      <li>Gabriel Ferreira Paulo</li>
+      <li>João Pereira Paes Henriques</li>
+      <li>Pedro de Oliveira Guimarães</li>
+      <li>Thaís Peroni Custodio Lino</li>
+    </ul>
+  </li>
+</ul>
+
+
+<!-- Comments only for posts -->
+
+
+    </article>
+  </main>
+
+  <footer>
+    <p class="copy">
+      <small> © Lorena de Nadai 2026
+        | Powered by Jekyll and
+        <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+        Última atualização em 13/11/2026
+      </small>
+    </p>
+
+    
+    <div class="rounded-social-buttons">
+<a title="" class="social-button email" itemprop="email" href="mailto:%6C%6F%72%65%6E%61%64%65%6E%61%64%61%69%36%37%39@%67%6D%61%69%6C.%63%6F%6D" target="_blank">
+    <i class="far fa-envelope"></i>
+  </a><a title="" class="social-button linkedin" href="https://www.linkedin.com/in/lorena-denadai-17a39037b" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-linkedin"></i>
+  </a><a title="" class="social-button github" href="https://www.github.com/denadaiLorena" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+
+    
+
+  </footer>
+
+  <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+  <script>
+    (function () {
+      var toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme') ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
