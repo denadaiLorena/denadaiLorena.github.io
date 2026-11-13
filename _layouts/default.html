@@ -23,14 +23,6 @@
 
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
 
-  {% unless layout.hide_header_nav or page.hide_header_nav %}
-  <header>
-    <h1 class="post-headline{% if page.layout == 'post' %} site-title-small{% endif %}">{{site.title}}</h1>
-    <h3 class="post-description">{{site.description}}</h3>
-    {% include navigation.html %}
-  </header>
-  {% endunless %}
-
   {% seo %}
 
   {% include favicon.html %}
@@ -58,7 +50,15 @@
 
 </head>
 
-<body>
+<body{% if page.is_home %} class="is-home"{% endif %}>
+  {% unless layout.hide_header_nav or page.hide_header_nav %}
+  <header>
+    <h1 class="post-headline{% if page.layout == 'post' %} site-title-small{% endif %}">{{site.title}}</h1>
+    <h3 class="post-description">{{site.description}}</h3>
+    {% include navigation.html %}
+  </header>
+  {% endunless %}
+
   <main>
     <article>
       {{ content }}

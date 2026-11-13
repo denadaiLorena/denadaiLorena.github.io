@@ -3,6 +3,7 @@ layout: post
 title: Painel COVID-19 Espírito Santo
 description: Dashboard analítico em Streamlit com pipeline otimizado em Parquet, regras de negócio para letalidade e mapas coropléticos com Plotly.
 date: 2026-11-09
+image: /assets/images/project/PainelCOVID19.png
 order: 2
 ---
 

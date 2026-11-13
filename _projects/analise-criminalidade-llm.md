@@ -3,6 +3,7 @@ layout: post
 title: Análise de Criminalidade & LLM
 description: Pipeline ETL no PostgreSQL, dashboard Streamlit e integração com LLM via n8n para análise e recomendações de segurança pública.
 date: 2026-11-09
+image: /assets/images/project/AnaliseCriminalidade.png
 order: 3
 ---
 
