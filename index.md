@@ -166,11 +166,20 @@ is_home: true
           <span class="experience-location">Vitória, ES</span>
         </div>
       </div>
+
+      <p class="experience-intro">
+        Atuação no desenvolvimento e evolução de soluções institucionais, abrangendo sistemas de gestão, engenharia de dados, indicadores e integração de aplicações.
+      </p>
+
       <ul class="experience-bullets">
-        <li>Desenvolvimento de soluções full-stack para gestão e serviços públicos em produção real.</li>
-        <li>Modelagem de bancos relacionais, APIs REST e interfaces modernas para sistemas internos.</li>
-        <li>Stack: <strong>Vue.js · TypeScript · Quasar · PostgreSQL · Python · SQLAlchemy</strong></li>
+        <li><strong>Sistemas institucionais:</strong> Desenvolvimento de funcionalidades para gestão de solicitações, contemplando formulários, análise documental, cálculos, controle de estoque, gerenciamento de custos e histórico de alterações.</li>
+        <li><strong>Engenharia de Dados e Indicadores:</strong> Desenvolvimento de dashboards gráficos para diferentes projetos, construção de Data Warehouse a partir de dados da API do GitLab, implementação de rotinas batch de atualização e otimização da aplicação.</li>
+        <li><strong>APIs e Integração de Sistemas:</strong> Desenvolvimento de APIs para consulta de multas e notificações de fiscalização, integrando bases de dados SQL Server e PostgreSQL.</li>
       </ul>
+
+      <p class="experience-tech">
+        <strong>Tecnologias principais:</strong> PHP · Python · FastAPI · Flask · PostgreSQL · SQL Server · Vue.js · TypeScript · Quasar
+      </p>
     </div>
   </div>
 </section>
