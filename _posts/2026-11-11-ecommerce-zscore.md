@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Detecção Estatística de Anomalias (Z-Score)"
+tags: [python, séries temporais, previsão]
+image: /assets/images/blog/z-score.png
 ---
 
 Monitoramento estatístico contínuo em janela móvel de **28 dias**:

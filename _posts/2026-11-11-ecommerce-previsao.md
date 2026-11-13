@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Previsão Preditiva de Demanda (Holt-Winters 7D)"
+description: "Modelo de séries temporais com suavização exponencial tripla para prever vendas e faturamento, com intervalo de confiança de 95%."
+tags: [python, séries temporais, previsão]
+image: /assets/images/blog/holt-winters.png
 ---
 
 Modelo de séries temporais baseado em **suavização exponencial tripla (Holt-Winters)** projetado para antecipar o volume de vendas e faturamento:

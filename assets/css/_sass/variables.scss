@@ -5,19 +5,22 @@ $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.7;
 
 $spacing-unit:     30px;
-$light-gray: gray;
-$text-color:       #333;
-$background-color: #fdfdfd;
-$brand-color:      #af6dcd;
+$light-gray:       #6b7280;
+$text-color:       #1a1a24;
+$background-color: #f8f9fa;
+$brand-color:      #8842b0;
 $projectbox-text:  #1e2126;
 
-// Color scheme for light
-$body-bg: #fdfdfd;
-$projectbox: #c3e1c9;
-$text-color: #333;
+// Color scheme for light (Opção A: Lilás Tecnológico & Minimalista)
+$body-bg:          #f8f9fa;
+$projectbox:       #ffffff;
+$projectbox-border: #e5e7eb;
+$text-color:       #1a1a24;
 
-// Color scheme for dark modes
-$body-bg-dark: #23272d;
-$projectbox-dark: lighten(#98a0ac, 2%);
-$text-color-dark: #98a0ac;
-
+// Color scheme for dark mode
+$body-bg-dark:     #23272d;
+$projectbox-dark:  #2d3239;
+$projectbox-border-dark: #3d444d;
+$text-color-dark:  #e2e8f0;
+$brand-color-dark: #c084fc;
+$projectbox-text-dark: #f1f5f9;

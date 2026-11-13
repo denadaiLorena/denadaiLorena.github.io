@@ -1,21 +1,42 @@
 ---
 layout: default
+title: Blog
 ---
 
 <div class="article-list">
-  {% for post in paginator.posts %}
-    <h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <p>{{post.excerpt | strip_html}}</p>
-  {% endfor %}
+  <div class="gallery">
+    {% for post in paginator.posts %}
+      {% assign desc = post.description | default: post.excerpt | strip_html | strip | truncate: 160 %}
+      <a class="projectCard" href="{{ post.url | prepend: site.baseurl }}">
+        <div class="projectCard-media">
+          {% if post.image %}
+            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}" loading="lazy">
+          {% else %}
+            <div class="projectCard-placeholder"><span>{{ post.title | slice: 0 }}</span></div>
+          {% endif %}
+        </div>
+        <div class="projectCard-body">
+          <div class="projectCard-meta">{{ post.date | date: "%d/%m/%Y" }}</div>
+          <h2>{{ post.title }}</h2>
+          <p>{{ desc }}</p>
+          {% if post.tags.size > 0 %}
+            <ul class="projectCard-tags">
+              {% for tag in post.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
 </div>
 
 <!-- pagination -->
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Anterior</a>
   {% else %}
-    <span>&laquo; Prev</span>
+    <span>&laquo; Anterior</span>
   {% endif %}
 
   {% for page in (1..paginator.total_pages) %}
@@ -29,9 +50,9 @@ layout: default
   {% endfor %}
 
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Próxima &raquo;</a>
   {% else %}
-    <span>Next &raquo;</span>
+    <span>Próxima &raquo;</span>
   {% endif %}
 </div>
 {% endif %}
