@@ -172,13 +172,13 @@ is_home: true
       </p>
 
       <ul class="experience-bullets">
-        <li><strong>Sistemas institucionais:</strong> Desenvolvimento de funcionalidades para gestão de solicitações, contemplando formulários, análise documental, cálculos, controle de estoque, gerenciamento de custos e histórico de alterações.</li>
-        <li><strong>Engenharia de Dados e Indicadores:</strong> Desenvolvimento de dashboards gráficos para diferentes projetos, construção de Data Warehouse a partir de dados da API do GitLab, implementação de rotinas batch de atualização e otimização da aplicação.</li>
-        <li><strong>APIs e Integração de Sistemas:</strong> Desenvolvimento de APIs para consulta de multas e notificações de fiscalização, integrando bases de dados SQL Server e PostgreSQL.</li>
+        <li><strong>Sistemas Institucionais:</strong> Manutenção e evolução de sistemas corporativos de gestão pública utilizando PHP e PostgreSQL, com foco em modelagem relacional, sustentação e desenvolvimento de módulos no sistema CTECAD.</li>
+        <li><strong>Engenharia de Dados e BI:</strong> Desenvolvimento de pipelines ETL em Python para extração e consolidação de métricas de engenharia via API do GitLab, estruturando Data Warehouse em PostgreSQL e dashboards de indicadores com Flask.</li>
+        <li><strong>APIs e Integração de Sistemas:</strong> Construção de APIs REST com FastAPI e Python para integração e consulta a bases heterogêneas (SQL Server e PostgreSQL), além do desenvolvimento de interfaces administrativas com Vue.js, TypeScript e Quasar.</li>
       </ul>
 
       <p class="experience-tech">
-        <strong>Tecnologias principais:</strong> PHP · Python · FastAPI · Flask · PostgreSQL · SQL Server · Vue.js · TypeScript · Quasar
+        <strong>Tecnologias principais:</strong> PHP · Python · FastAPI · Flask · Vue.js · TypeScript · Quasar · PostgreSQL · SQL Server · SQLAlchemy · Docker · Git
       </p>
     </div>
   </div>
