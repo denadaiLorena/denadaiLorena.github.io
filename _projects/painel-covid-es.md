@@ -111,13 +111,13 @@ order: 2
   </div>
   <div class="reading-mode-buttons">
     <button class="mode-btn active" id="btn-all" onclick="setReadingMode('all')">
-      📖 Visão Completa
+       Visão Completa
     </button>
     <button class="mode-btn" id="btn-rh" onclick="setReadingMode('rh')">
-      💼 Visão Executiva & RH (Problema, Impacto e Decisões)
+       Visão Executiva & RH (Problema, Impacto e Decisões)
     </button>
     <button class="mode-btn" id="btn-tech" onclick="setReadingMode('tech')">
-      ⚙️ Visão Técnica & Engenharia (Código, Dados e Trade-offs)
+       Visão Técnica & Engenharia (Código, Dados e Trade-offs)
     </button>
   </div>
 </div>
@@ -133,34 +133,34 @@ order: 2
 
 ---
 
-## 🎯 O Que é o Projeto & Pitch de Impacto
+## O Que é o Projeto & Pitch de Impacto
 
 > **Dashboard analítico interativo de alta performance** desenvolvido para exploração, saneamento e visualização dos microdados epidemiológicos da pandemia de COVID-19 no Estado do Espírito Santo.
 
 <div class="perspective-card card-rh view-rh">
-  <div class="card-title">💼 O Ponto de Vista do Gestor & RH (Em Termos Simples)</div>
+  <div class="card-title"> O Ponto de Vista do Gestor & RH (Em Termos Simples)</div>
   <p><strong>Imagine o cenário:</strong> No pico de uma crise sanitária, diretores de hospitais e secretários de saúde precisam decidir com urgência: <em>onde faltará leito de UTI amanhã? Quais comorbidades têm maior risco de morte para priorizar medicamentos escassos? Quais cidades precisam de reforço imediato?</em></p>
   <p>Os dados governamentais existiam, mas estavam "trancados" em planilhas gigantescas de mais de 10 gigabytes que travavam computadores comuns. Este projeto transformou esses dados brutos em uma <strong>ferramenta de apoio à decisão rápida na palma da mão</strong>, permitindo que qualquer tomador de decisão filtre cidades, faixas etárias e riscos em segundos sem precisar entender de programação.</p>
 </div>
 
 <div class="perspective-card card-tech view-tech">
-  <div class="card-title">⚙️ O Ponto de Vista da Engenharia (Arquitetura & Rigor)</div>
+  <div class="card-title"> O Ponto de Vista da Engenharia (Arquitetura & Rigor)</div>
   <p>O desafio técnico central foi construir uma aplicação analítica interativa no <strong>Streamlit Cloud</strong> (ambiente com limitação de ~1GB de memória RAM) sobre um dataset bruto em CSV com <strong>mais de 10GB de dados nominais</strong>. A aplicação implementa um pipeline de extração e tratamento offline desacoplado, armazenamento colunar com compressão Snappy em <strong>Apache Parquet</strong>, redução de tipos primitivos (<em>downcasting</em>) e cálculo de métricas epidemiológicas imunes ao viés de atraso de notificação (<em>reporting lag</em>).</p>
 </div>
 
 ---
 
-## ⚡ O Desafio de Dados: De 10GB Inviáveis para Megabytes Instantâneos
+##  O Desafio de Dados: De 10GB Inviáveis para Megabytes Instantâneos
 
 A base oficial de **microdados da COVID-19** disponibilizada pelo Governo do ES reunia milhões de linhas com detalhes de sintomas, testes, histórico médico e evolução dos pacientes.
 
 <div class="perspective-card card-rh view-rh">
-  <div class="card-title">💼 Como o problema foi resolvido sem gastar orçamento</div>
+  <div class="card-title">Como o problema foi resolvido sem gastar orçamento</div>
   <p>Um arquivo de 10GB não pode ser enviado para o GitHub (que limita arquivos a 100MB) nem roda em servidores gratuitos de nuvem. A alternativa comum seria pagar caro por um banco de dados em nuvem. Em vez de aumentar custos de infraestrutura, apliquei uma técnica inteligente de "compactação seletiva": limpei repetições desnecessárias e converti o formato do arquivo. O resultado? <strong>O arquivo de 10GB encolheu para poucos megabytes</strong>, abrindo instantaneamente no navegador com custo de servidor igual a zero.</p>
 </div>
 
 <div class="perspective-card card-tech view-tech">
-  <div class="card-title">⚙️ Pipeline ETL: Processamento em Lotes e Downcasting</div>
+  <div class="card-title">Pipeline ETL: Processamento em Lotes e Downcasting</div>
   <p>Para ler um arquivo de 10GB em máquinas com memória finita sem disparar erros de <em>Out-Of-Memory (OOM)</em>, o script <code>prepare_data.py</code> adota uma estratégia de processamento em chunks:</p>
   <ul>
     <li><strong>Leitura em Chunks de 100.000 linhas:</strong> O Pandas processa o CSV particionado, mantendo a pegada de RAM estável durante toda a execução.</li>
@@ -181,7 +181,7 @@ A base oficial de **microdados da COVID-19** disponibilizada pelo Governo do ES 
 
 ---
 
-## ⚖️ Decisões de Arquitetura & Matriz de Trade-offs
+## Decisões de Arquitetura & Matriz de Trade-offs
 
 Em engenharia de dados, toda escolha carrega vantagens e concessões. Abaixo estão as decisões deliberadas do projeto:
 
@@ -214,19 +214,19 @@ Em engenharia de dados, toda escolha carrega vantagens e concessões. Abaixo est
 
 ---
 
-## 🔬 Rigor Estatístico: A Fórmula da Taxa de Letalidade
+## Rigor Estatístico: A Fórmula da Taxa de Letalidade
 
 Um dos erros mais comuns em painéis de saúde pública na época da pandemia foi a publicação de índices distorcidos de letalidade.
 
 $$\text{Taxa de Letalidade Adotada (\%)} = \frac{\text{Óbitos Consolidados}}{\text{Óbitos} + \text{Recuperados}} \times 100$$
 
 <div class="perspective-card card-rh view-rh">
-  <div class="card-title">💼 Por que a fórmula tradicional enganava as pessoas?</div>
+  <div class="card-title">Por que a fórmula tradicional enganava as pessoas?</div>
   <p>Muitos sites dividiam o número de mortos pelo total de notificações. O problema: milhares de pessoas que haviam testado positivo ainda estavam no hospital ou em isolamento, sem um desfecho final. Ao colocar esses casos "em aberto" na conta, a taxa de gravidade parecia falsamente baixa. Ao calcular apenas entre quem <strong>já havia se recuperado ou infelizmente falecido</strong>, garantimos um número confiável e real da gravidade da doença.</p>
 </div>
 
 <div class="perspective-card card-tech view-tech">
-  <div class="card-title">⚙️ Tratamento Estatístico: Viés de Notificação & Outliers (IQR)</div>
+  <div class="card-title">Tratamento Estatístico: Viés de Notificação & Outliers (IQR)</div>
   <p>O pipeline aplicou duas regras de consistência metodológica:</p>
   <ul>
     <li><strong>Blindagem contra Censura à Direita (<em>Right-Censored Data</em>):</strong> Exclusão de notificações com desfecho pendente no denominador da taxa de letalidade, isolando a população de casos fechados.</li>
@@ -236,17 +236,17 @@ $$\text{Taxa de Letalidade Adotada (\%)} = \frac{\text{Óbitos Consolidados}}{\t
 
 ---
 
-## 🎨 Otimização de UX: O Conceito de Performance Percebida
+## Otimização de UX: O Conceito de Performance Percebida
 
 Mapas geográficos interativos baseados em malhas GeoJSON contêm milhares de coordenadas poligonais, exigindo alto processamento gráfico do navegador.
 
 <div class="perspective-card card-rh view-rh">
-  <div class="card-title">💼 Experiência do Usuário sem Espera</div>
+  <div class="card-title">Experiência do Usuário sem Espera</div>
   <p>Se o usuário entra no site e fica olhando uma tela branca carregando o mapa por vários segundos, ele desiste. Para evitar isso, organizei o painel de forma estratégica: os números principais (KPIs) carregam instantaneamente no topo da tela. Enquanto o usuário bate o olho nos totais e começa a ler, o mapa detalhado termina de renderizar suavemente logo abaixo, sem sensação de lentidão.</p>
 </div>
 
 <div class="perspective-card card-tech view-tech">
-  <div class="card-title">⚙️ Engenharia de Frontend: Carregamento Above-the-Fold</div>
+  <div class="card-title">Engenharia de Frontend: Carregamento Above-the-Fold</div>
   <p>Aplicação do princípio de <strong>Performance Percebida (<em>Perceived Performance</em>)</strong>:</p>
   <ul>
     <li><strong>Priorização de Renderização:</strong> Métricas agregadas de alta velocidade (KPI cards em HTML/CSS leve) são renderizadas primeiro no topo (<em>Above-the-Fold</em>).</li>
@@ -256,7 +256,7 @@ Mapas geográficos interativos baseados em malhas GeoJSON contêm milhares de co
 
 ---
 
-## 📊 Principais Descobertas Analíticas
+## Principais Descobertas Analíticas
 
 O painel reúne diferentes dimensões epidemiológicas guiando o usuário por uma narrativa clara:
 
@@ -267,7 +267,7 @@ O painel reúne diferentes dimensões epidemiológicas guiando o usuário por um
 
 ---
 
-## 🛠️ Arquitetura Modular do Código
+## Arquitetura Modular do Código
 
 O projeto foi refatorado e desacoplado em módulos independentes seguindo o princípio da responsabilidade única (Single Responsibility Principle):
 
@@ -296,7 +296,7 @@ painel-covid-es/
 
 ---
 
-## 🚀 Visão de Maturidade: "O Que Eu Faria Diferente Hoje?"
+## Visão de Maturidade: "O Que Eu Faria Diferente Hoje?"
 
 Olhando criticamente para o projeto com o conhecimento acumulado e a evolução contínua da engenharia de dados:
 
@@ -306,7 +306,7 @@ Olhando criticamente para o projeto com o conhecimento acumulado e a evolução 
 
 ---
 
-## 🧰 Tecnologias & Ferramentas
+## Tecnologias & Ferramentas
 
 * **Linguagem:** Python 3.10+
 * **Processamento & Engenharia de Dados:** Pandas, NumPy, PyArrow (Apache Parquet com Snappy)
